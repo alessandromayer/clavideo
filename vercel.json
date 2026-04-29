@@ -1,19 +1,16 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "backend/server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "backend/server.js"
+  "experimentalServices": {
+    "frontend": {
+      "entrypoint": "frontend",
+      "routePrefix": "/",
+      "framework": "vite"
     },
-    {
-      "src": "/(.*)",
-      "dest": "backend/server.js"
+    "backend": {
+      "entrypoint": "backend",
+      "routePrefix": "/_/backend"
     }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/_/backend/api/$1" }
   ]
 }
