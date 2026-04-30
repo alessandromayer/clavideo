@@ -385,7 +385,7 @@ app.post('/api/ideas', async (req, res) => {
 });
 
 // Serve built frontend from ../frontend/dist
-const FRONTEND_DIST = path.join(__dirname, 'frontend', 'dist');
+const FRONTEND_DIST = path.join(__dirname, 'ui', 'dist');
 if (fs.existsSync(FRONTEND_DIST)) {
   app.use(express.static(FRONTEND_DIST));
   // SPA fallback — all non-API routes return index.html
