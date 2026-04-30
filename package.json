@@ -1,11 +1,15 @@
 {
-  "name": "virada-video-backend",
+  "name": "clavideo",
   "version": "1.0.0",
   "type": "module",
-  "description": "VIRADA-VIDEO backend — proxy para fal.ai e enhancer de prompt via LLM",
+  "description": "AI Video Generator with Claude integration",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
+    "start": "node server.js",
     "dev": "node --watch server.js",
-    "start": "node server.js"
+    "build": "echo 'no build step'"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
